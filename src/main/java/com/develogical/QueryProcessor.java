@@ -34,7 +34,7 @@ public class QueryProcessor {
                               8,
   
                               // The end index
-                              10);
+                              12);
 
 
             int[] values = Arrays.stream(slice)
