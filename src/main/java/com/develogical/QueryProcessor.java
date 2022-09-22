@@ -16,6 +16,9 @@ public class QueryProcessor {
             "human contact. Domestic cats are valued by humans for companionship and their ability to" +
             "kill rodents. About 60 cat breeds are recognized by various cat registries.";
         }
+        if (query.toLowerCase().contains("what is your name")) {
+            return "My name is buckeyes";
+        }
         return "";
 
     }
