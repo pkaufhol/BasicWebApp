@@ -17,7 +17,7 @@ public class QueryProcessor {
             "kill rodents. About 60 cat breeds are recognized by various cat registries.";
         }
         if (query.toLowerCase().contains("what is your name")) {
-            return "My name is buckeyes";
+            return "buckeyes";
         }
         return "";
 
