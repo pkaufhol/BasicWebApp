@@ -1,5 +1,7 @@
 package com.develogical;
-
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.stream.*;
 public class QueryProcessor {
 
     public String process(String query) {
@@ -18,6 +20,33 @@ public class QueryProcessor {
         }
         if (query.toLowerCase().contains("what is your name")) {
             return "buckeyes";
+        }
+        if (query.toLowerCase().contains("which of the following numbers is the largest:")) {
+            String thisQuery = query.toLowerCase();
+            String[] arrOfStr = thisQuery.split(" ", -1);
+            String[] slice = Arrays
+                          .copyOfRange(
+  
+                              // Source
+                              arrOfStr,
+  
+                              // The Start index
+                              8,
+  
+                              // The end index
+                              10);
+
+
+            int[] values = Arrays.stream(slice)
+                              .mapToInt(Integer::parseInt)
+                              .toArray();
+    
+            IntStream stream2 = Arrays.stream(values);
+            // IntStream -> Integer[]
+            Integer[] integers = stream2.boxed().toArray(Integer[]::new);
+
+            int max = Collections.max(Arrays.asList(integers));
+            return Integer.toString(max);
         }
         return "";
 
